@@ -1,0 +1,36 @@
+
+
+body {
+    font-family: sans-serif;
+}
+
+/* blue round button */
+.blueB {    
+    border: 1px solid rgb(30, 130, 200);
+    background-color: rgb(30, 130, 200);
+    color: white;
+    border-radius: 7px;
+    padding: 5px;
+
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+table {
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+th {
+    background-color: rgb(30, 130, 200);
+    color: white;
+    width: 200px;
+}
+
+td {
+    border: 1px solid gray;
+    width: 200px;
+    padding: 16px;
+}
+
+

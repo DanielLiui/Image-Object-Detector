@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h2 style="color: rgb(10, 0, 20)"> IMAGE OBJECT DETECTOR</h1>
+     
+    <div id="instructDiv">                          
+      <h3> Instructions </h3>
+      <p> 1. Upload images </p>
+      <p> 2. Enter object you want to detect in your images and website will process the images 
+      and determine whether or not they contain the object using Google's Computer Vision
+      model </p> <br>
+  
+      <p style="margin-bottom: 5px;"> a) If an image contains the object, the accuracy(%) will tell you how confident the 
+      CV model is about the object's presence </p>
+      <p> b) If not, no accuracy will be provided </p> <br>
+  
+      <u> Other features: </u>
+      <p> 1. Clicking the name of an image will show the image and what objects were 
+      detected </p><br>
+  
+    </div>
+
+
+  <h3> Image results </h3>
+  <table id="resultTable">
+  <tr>
+    <th class="fileCell"> File </th>
+    <th class="infoCell"> Contains object </th>
+    <th class="infoCell"> Accuracy </th>
+  </tr>
+  </table><br>
+
+
+  <div id="detectDiv">
+    <input type="file" id="fInput" value="Choose image"> <br><br>  <!-- may want to specify ext -->
+    Detect object: <input type="text" id="detectF"> <button id="detectB"> Detect </button>
+
+    <div id="imgDiv" style="margin: 10px;">
+        <div style="width: 90%; height: 200px; background-color: rgb(48, 36, 59);"> </div>
+    </div>
+
+    <div id="detectInfo">
+      <p>Detect info </p>
+    </div> <br>
+
+  </div>
+
+  <script src="client.js"></script>
+  <script src="evListeners.js"></script>
+</body>
+</html>

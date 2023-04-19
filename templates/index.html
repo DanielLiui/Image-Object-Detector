@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"         
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <style>
+    #resultTable {
+      border-radius: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark more-nav">
+    <h3 class="navbar-brand" id="nav-title" href="#"> Image Object Detector </h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse justify-content-end align-center refs" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/home"> Home </a>
+        <a class="nav-item nav-link" href="/instructions"> Instructions </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="left-content">
+    <div class="row justify-content-center">
+      <div class="col-auto">
+      <h4 class="title1"> Image results </h4>
+
+      <!-- <div class="btn-group"> -->
+      <a class="btn btn-primary" href="/all_imgs" > All images </a>
+      <a class="btn btn-primary" href="/with_obj" > With object </a>
+      <a class="btn btn-primary" href="/without_obj" > Without object </a>
+      <a class="btn btn-primary" href="/unsure" > Unsure </a>  
+      <!-- </div> -->
+
+      <table id="resultTable" class="rounded-3">
+      <tr>
+        <th class="fileCell"> File </th>
+        <th class="infoCell"> Contains object </th>
+        <th class="infoCell"> Accuracy </th>
+      </tr>
+
+      <tr>
+        <td class="fileCell emptyCell"> </td>
+        <td class="infoCell emptyCell"> </td>
+        <td class="infoCell emptyCell"> </td>
+      </tr>
+  
+      {% for i in range(0, table_imgs|length) %}
+      <tr>
+        <td class="fileCell"> <input type="checkbox">
+        <a class="img-link" href="/index/sel_img/{{i}}"> {{ table_imgs[i].img_name }} </a> </td>
+        <td class="infoCell"> {{ table_imgs[i].contains }} </td>
+        <td class="infoCell"> {{ table_imgs[i].acc }} </td>
+      </tr>
+  
+      {% endfor %}
+      </table><br>
+
+      <a class="btn btn-primary" href="/remove" > Remove </a>
+      <a class="btn btn-primary" href="/clear" > Clear all </a>
+      <a class="btn btn-primary" href="/download" > Download </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="detect-div">
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" class="fUpload" name="file" value="Upload image or zip">
+      <button class="btn btn-warning"> Upload </button>
+    </form>
+
+    <form action = "/detect" method="POST">
+      Detect: <input type="text" name="det_obj">
+      <button class="btn btn-warning"> Detect </button>
+    </form> <br>
+
+    <div id="img-div">
+      {% if img_sel %}
+        <img id="detect-img" src="static/user_imgs/{{ sel_img_link }}" alt=""> 
+      {% else %}
+        <div id="placeholder-img"> </div>
+      {% endif %}
+    </div> <br>
+
+    <div id="detect-info">
+      <h6 class="subtitle-dark-body"> Objects detected for {{ sel_img_link }}: </h6>
+      {% for i in range(0, detections|length) %}
+        <p> {{i+1}}. {{detections[i].name}} ({{ (detections[i].score * 100)|round|string + '%' }})
+      {% endfor %}
+    </div> <br>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <!-- <script src="client.js"></script>
+  <script src="evListeners.js"></script> -->
+</body>
+</html>

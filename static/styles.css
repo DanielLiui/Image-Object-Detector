@@ -1,0 +1,129 @@
+
+
+body {
+    font-size: 15px;
+}
+
+p {
+    margin: 3px;  padding: 0px;
+}
+
+#title1 {  /*white bground*/
+    color: rgb(10, 0, 20);
+    margin: 10px 0px 40px 0px;  margin-bottom: 30px;
+}
+
+.subtitle-dark-body {  /*h4*/
+    text-align: center;
+    margin-bottom: 8px;
+    color: rgb(30, 130, 200); 
+    
+}
+
+.left-content {
+    width: 60%;
+    padding: 16px;
+    text-align: center;
+}
+
+#img-div {
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+#detect-div { 
+    position: absolute;
+    right: 0px;  top: 58px;
+    height: 130%;  width: 400px;
+    padding: 20px;
+    background-color: rgb(20, 20, 30);
+    color: white;
+}
+
+.fUpload {
+    width: 245px;
+    /* background-color: white; */
+    margin-bottom: 14px;
+}
+
+#placeholder-img {
+    width: 100%;  height: 200px; 
+    background-color: rgb(48, 36, 59);
+}
+
+.center-div {
+    text-align: center;
+}
+
+#detect-img {
+    width: 100%;
+}
+
+#detect-info {
+    color: white;
+    line-height: 17px;
+}
+
+button {
+    font-size: 14px;
+}
+
+#resultTable {
+    border-color: grey;
+    border-style: solid;  border-width: 1px;
+    border-radius: 10px;
+    margin: 10px; 
+}
+
+th {
+    background-color: rgb(30, 130, 200);
+    color: white;
+}
+
+.fileCell {  /*td*/
+    border: 1px solid gray;
+    width: 300px; padding: 4px 4px 4px 8px;
+    text-align: left;
+}
+
+.infoCell {  
+    border: 1px solid gray;
+    width: 80px;
+    padding: 4px;
+    text-align: center;
+}
+
+.emptyCell {
+    height: 30px;
+}
+
+.img-link {
+    color: black;
+}
+
+.more-nav {
+    padding-left: 30px;  padding-right: 30px;
+}
+
+#nav-title {
+    font-family: 'consolas';  /*font-weight: 2px;*/
+    margin-left: 30px;
+}
+
+.refs {
+    margin-right: 30px;
+}
+
+
+
+/* instructions.html */
+#instruct-div { 
+    padding: 16px; width: 500px;
+    background-color: rgb(20, 20, 30);
+    border-radius: 10px;
+    color: white;
+}
+
+.pgraph{
+    margin-bottom: 18px;
+}
