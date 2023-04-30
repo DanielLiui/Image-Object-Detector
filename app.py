@@ -211,12 +211,12 @@ def upload():
     return render_template("index.html", table_imgs=table_imgs, img_sel=True,  
     sel_img_link=last_img["img_name"], detections=last_img["detections"])
 
-
+'''
 if __name__ == "__main__":
     print("Visit: ")
     print("http://127.0.0.1:8000/")
     print("http://127.0.0.1:8000/test2")
     #app.run(port=8001, debug=True)
     app.run(host='0.0.0.0', port=8080)
-
+'''
 
